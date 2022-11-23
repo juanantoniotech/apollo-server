@@ -33,3 +33,5 @@ To use and run queries, run the following command:
 ```
 npm run dev
 ```
+
+The above command will create a server on the port 4000, go to the web browser en write http://localhost:4000
