@@ -8,7 +8,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    obtenerEstudiantes: Estudiante
+    obtenerEstudiantes: [Estudiante]
   }
 `;
 
@@ -26,7 +26,7 @@ const estudiantes = [
 // Resolvers
 const resolvers = {
   Query: {
-    obtenerEstudiantes: () => estudiantes[0],
+    obtenerEstudiantes: () => estudiantes,
   },
 };
 
