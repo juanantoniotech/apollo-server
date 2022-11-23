@@ -1,34 +1,6 @@
 const { ApolloServer, gql } = require("apollo-server");
-
-// Schema
-const typeDefs = gql`
-  type Estudiante {
-    nombre: String
-    apellido: String
-  }
-
-  type Query {
-    obtenerEstudiantes: [Estudiante]
-  }
-`;
-
-const estudiantes = [
-  {
-    nombre: "Juan",
-    apellido: "Perez",
-  },
-  {
-    nombre: "Juan",
-    apellido: "Cahuana",
-  },
-];
-
-// Resolvers
-const resolvers = {
-  Query: {
-    obtenerEstudiantes: () => estudiantes,
-  },
-};
+const typeDefs = require("./db/schema");
+const resolvers = require("./db/resolvers");
 
 // server
 const server = new ApolloServer({
